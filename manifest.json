@@ -1,0 +1,33 @@
+{
+  "name": "Close Ticket",
+  "version": "1.0",
+  "description": "Chrome extension to close HelpScout tickets using your voice command - close ticket.",
+  "author": "Bogdan Popa",
+  "icons": {
+    "16": "/images/icon16.png",
+    "48": "/images/icon48.png",
+    "128": "/images/icon128.png"
+  },
+  "permissions": [
+    "tabs", "https://secure.helpscout.net/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://secure.helpscout.net/*"
+      ],
+      "js": [
+        "background.js",
+        "jquery-3.2.1.min.js",
+        "annyang.min.js",
+        "base64.min.js"
+      ]
+    }
+  ],
+  "manifest_version": 2
+}
